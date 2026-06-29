@@ -14,13 +14,18 @@ function search() {
   );
 
   if (!found) {
-    result.innerHTML = "❌ 조회되는 정보가 없습니다.";
+    result.innerHTML = `
+      <div class="result">
+        ❌ 조회되는 정보가 없습니다.
+      </div>
+    `;
     return;
   }
 
   result.innerHTML = `
     <div class="result">
-      <h3>✅ 조회 성공</h3>
+      <h3>🎉 조회 성공</h3>
+      <p><b>이름:</b> ${found.name}</p>
       <p><b>배송방법:</b> ${found.type}</p>
       <p><b>운송장번호:</b> ${found.tracking}</p>
     </div>
